@@ -1,29 +1,5 @@
-# flexbox-playground
+# Flexbox Playground
 
-## Project setup
-```
-yarn install
-```
+This is a fun little web app to help people visualize flexbox properties. Head on over to https://flexbox.mcbride.tech and give it a whirl.
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Not really mobile friendly, but open to ideas/feedback on how to pull that off in a nice way!

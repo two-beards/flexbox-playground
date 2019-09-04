@@ -1,28 +1,35 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template lang="html">
+  <div class="font-sans text-gray-900 min-h-screen flex flex-col">
+    <AppHeader />
+    <main class="flex-auto overflow-hidden absolute inset-0 pt-16 flex">
+      <Sidebar />
+      <FlexContainer v-if="showFlexMarkup === false" />
+      <FlexMarkup v-else />
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapState } from 'vuex'
+import AppHeader from '@/components/AppHeader'
+import Sidebar from '@/components/Sidebar'
+import FlexContainer from '@/components/FlexContainer'
+import FlexMarkup from '@/components/FlexMarkup'
 
 export default {
-  name: 'app',
+  name: 'FlexboxPlayground',
   components: {
-    HelloWorld
+    AppHeader,
+    Sidebar,
+    FlexContainer,
+    FlexMarkup
+  },
+  computed: {
+    ...mapState(['showFlexMarkup'])
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="css">
+@import './assets/main.css';
 </style>
