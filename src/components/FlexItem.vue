@@ -2,10 +2,10 @@
   <div
     :style="flexItemStyles"
     class="p-1 rounded">
-    <div class="bg-teal-500 text-white rounded py-2 px-3 w-full h-full flex flex-col justify-around">
-      <span class="block text-center mb-2 text-sm">Index: {{ itemIndex }}</span>
-      <span class="px-2 py-1 cursor-pointer block mb-2 text-center hover:bg-white hover:text-teal-500" @click="edit">Edit</span>
-      <span class="px-2 py-1 cursor-pointer block text-center hover:bg-white hover:text-teal-500" @click="remove">Remove</span>
+    <div
+      class="cursor-pointer bg-indigo-500 text-white rounded p-8 w-full h-full flex flex-col justify-around"
+      @click="edit">
+      <span class="block text-center text-sm">Index: {{ itemIndex }}</span>
     </div>
   </div>
 </template>
@@ -33,9 +33,6 @@ export default {
     }
   },
   methods: {
-    remove() {
-      this.$emit('remove', this.itemId)
-    },
     edit() {
       this.$emit('set', this.itemId)
     }

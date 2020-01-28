@@ -1,30 +1,27 @@
 <template lang="html">
-  <nav class="flex mb-4">
-    <span
-      :class="{ 'border-black text-gray-800': activeTab === 'container', 'border-transparent text-gray-600': activeTab !== 'container' }"
-      class="flex w-1/2 uppercase text-sm font-bold border-b-2 items-center justify-center cursor-pointer py-3"
-      @click="setActiveTab('container')">
-      Container
-    </span>
-    <span
-      :class="{ 'border-black text-gray-800': activeTab === 'items', 'border-transparent text-gray-600': activeTab !== 'items' }"
-      class="flex w-1/2 uppercase text-sm font-bold border-b-2 items-center justify-center cursor-pointer py-3"
-      @click="setActiveTab('items')">
-      Items
-    </span>
+  <nav class="flex m-4">
+    <SidebarNavTab :is-active="activeTab === 'container'" @click="setActiveTab('container')">Container</SidebarNavTab>
+    <SidebarNavTab :is-active="activeTab === 'items'" @click="setActiveTab('items')">Items</SidebarNavTab>
   </nav>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import SidebarNavTab from './SidebarNavTab'
 
 export default {
   name: 'SidebarNav',
+  components: {
+    SidebarNavTab,
+  },
   computed: {
     ...mapState(['activeTab'])
   },
   methods: {
-    ...mapActions(['setActiveTab'])
+    ...mapActions(['setActiveTab']),
+    handleTabClick(tab) {
+      this.setActiveTab(tab)
+    }
   }
 }
 </script>

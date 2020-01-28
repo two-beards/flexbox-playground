@@ -9,7 +9,6 @@
       :item-styles="item.styles"
       :item-index="index"
       :class="{ 'bg-yellow-500': selectedItem !== null && selectedItem.id === item.id }"
-      @remove="removeFlexItem"
       @set="setSelectedItem" />
   </section>
 </template>

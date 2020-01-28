@@ -2,13 +2,13 @@
   <section class="px-4 pb-4">
     <p class="leading-normal mb-2">Edit properties of the flex container here.</p>
     <button
-      class="rounded mb-4 p-2 font-semibold bg-teal-500 hover:bg-teal-600 text-white cursor-pointer w-full text-center"
+      class="rounded mb-6 p-2 font-semibold bg-indigo-500 hover:bg-indigo-600 text-white cursor-pointer w-full text-center"
       @click="addFlexItem">
       Add Flex Item
     </button>
     <form>
       <div class="mb-4">
-        <label class="lowercase text-sm font-normal mb-2 block font-mono">Flex-direction</label>
+        <label class="mb-2 lowercase text-base font-semibold block">Flex-direction</label>
         <Multiselect
           v-model="flexDirection"
           :options="flexProperties.flexDirection"
@@ -17,7 +17,7 @@
       </div>
       
       <div class="mb-4">
-        <label class="lowercase text-sm font-normal mb-2 block font-mono">Flex-wrap</label>
+        <label class="mb-2 lowercase text-base font-semibold block">Flex-wrap</label>
         <Multiselect
           v-model="flexWrap"
           :options="flexProperties.flexWrap"
@@ -26,7 +26,7 @@
       </div>
       
       <div class="mb-4">
-        <label class="lowercase text-sm font-normal mb-2 block font-mono">Justify-content</label>
+        <label class="mb-2 lowercase text-base font-semibold block">Justify-content</label>
         <Multiselect
           v-model="justifyContent"
           :options="flexProperties.justifyContent"
@@ -35,7 +35,7 @@
       </div>
       
       <div class="mb-4">
-        <label class="lowercase text-sm font-normal mb-2 block font-mono">Align-items</label>
+        <label class="mb-2 lowercase text-base font-semibold block">Align-items</label>
         <Multiselect
           v-model="alignItems"
           :options="flexProperties.alignItems"
@@ -44,7 +44,7 @@
       </div>
       
       <div class="mb-4">
-        <label class="lowercase text-sm font-normal mb-2 block font-mono">Align-content</label>
+        <label class="mb-2 lowercase text-base font-semibold block">Align-content</label>
         <Multiselect
           v-model="alignContent"
           :options="flexProperties.alignContent"

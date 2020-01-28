@@ -56,8 +56,9 @@ export const mutations = {
       }
     }]
   },
-  REMOVE_FLEX_ITEM(state, id) {
-    state.flexItems = state.flexItems.filter(it => it.id !== id)
+  REMOVE_SELECTED_ITEM(state) {
+    const currentItemId = state.selectedItem.id
+    state.flexItems = state.flexItems.filter(it => it.id !== currentItemId)
   },
   SET_SELECTED_ITEM(state, item) {
     if (item === null) {
@@ -112,11 +113,9 @@ export const actions = {
   addFlexItem({ commit }) {
     commit('ADD_FLEX_ITEM')
   },
-  removeFlexItem({ commit, state }, id) {
-    if (state.selectedItem !== null && state.selectedItem.id === id) {
-      commit('SET_SELECTED_ITEM', null)
-    }
-    commit('REMOVE_FLEX_ITEM', id)
+  removeSelectedItem({ commit }) {
+    commit('REMOVE_SELECTED_ITEM')
+    commit('SET_SELECTED_ITEM', null)
   },
   setSelectedItem({ commit }, val) {
     commit('SET_SELECTED_ITEM', val)
