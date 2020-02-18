@@ -52,7 +52,7 @@ export default {
 }
 `
       
-      const itemsCss = this.flexItems.reduce((acc, it, index) => {
+      const itemsCss = this.flexItems.map((it, index) => {
         let nonDefaultCount = 0
         let o = ''
         let fg = ''
@@ -86,12 +86,10 @@ export default {
         }
         
         if (nonDefaultCount > 0) {
-          acc += `.item-${index} {${o}${fg}${fs}${fb}${as}
+          return `.item-${index} {${o}${fg}${fs}${fb}${as}
 }`
         }
-        
-        return acc
-      }, '')
+      }).join('\n')
       
       return `${containerCss}
 ${itemsCss}
