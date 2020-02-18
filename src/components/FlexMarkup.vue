@@ -49,10 +49,9 @@ export default {
       }
       const containerCss = `.container {
   display: flex;${fd}${fw}${jc}${ai}${ac}
-}
-`
+}`
       
-      const itemsCss = this.flexItems.reduce((acc, it, index) => {
+      const itemsCss = this.flexItems.map((it, index) => {
         let nonDefaultCount = 0
         let o = ''
         let fg = ''
@@ -86,26 +85,19 @@ export default {
         }
         
         if (nonDefaultCount > 0) {
-          acc += `.item-${index} {${o}${fg}${fs}${fb}${as}
+          return `.item-${index} {${o}${fg}${fs}${fb}${as}
 }`
         }
-        
-        return acc
-      }, '')
+      }).join('\n')
       
-      return `${containerCss}
-${itemsCss}
-`
+      return `${containerCss}\n\n${itemsCss}`
     },
     itemsMarkup() {
-      const itemsMarkup = this.flexItems.length === 0 ? '' : this.flexItems.reduce((acc, it, index) => {
-        acc += `  <div class="item-${index}"></div>
-`
-        
-        return acc
-      }, '\n')
+      const itemsMarkup = this.flexItems.length === 0 ? '' : this.flexItems.map((it, index) => {
+        return `  <div class="item-${index}"></div>`
+      }).join('\n')
       
-      return `<div class="container">${itemsMarkup}</div>`
+      return `<div class="container">\n${itemsMarkup}\n</div>`
     }
   }
 }
