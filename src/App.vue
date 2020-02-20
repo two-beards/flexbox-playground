@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="font-sans text-gray-900 min-h-screen flex flex-col">
+  <div class="font-sans text-gray-900 min-h-screen flex flex-col max-w-screen-lg lg:max-w-full">
     <AppHeader />
     <main class="flex-auto overflow-hidden absolute inset-0 pt-16 flex">
       <Sidebar />
