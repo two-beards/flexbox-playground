@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: flexbox.tech
+Token: bbcf71767fa80286bd749b16e07c7a884c982135e1fbb3afc2be36f8531d9bda
