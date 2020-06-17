@@ -1,6 +1,6 @@
-<template lang="html">
+<template>
   <section class="h-full bg-white p-4 overflow-y-auto leading-normal">
-    <p class="mb-4">Below you will find the CSS and markup required to generate the current layout. The CSS has been optimized to omit any properties which have the default values (e.g., <code>flex-direction: row;</code>).
+    <p class="mb-4">Below you will find the CSS and markup required to generate the current layout. The CSS has been optimized to omit any properties which have the default values (e.g., <code>flex-direction: row;</code>).</p>
     <h3 class="mb-3">CSS:</h3>
     <pre class="p-4 mb-6 font-mono text-gray-800 bg-gray-100 border border-gray-400 rounded">{{ itemsCss }}</pre>
     

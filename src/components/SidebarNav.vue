@@ -1,13 +1,13 @@
-<template lang="html">
+<template>
   <nav class="flex m-4">
-    <SidebarNavTab :is-active="activeTab === 'container'" @click="setActiveTab('container')">Container</SidebarNavTab>
-    <SidebarNavTab :is-active="activeTab === 'items'" @click="setActiveTab('items')">Items</SidebarNavTab>
+    <SidebarNavTab :is-active="activeTab === 'container'" @click="setActiveTab('container')" tab-name="Container" />
+    <SidebarNavTab :is-active="activeTab === 'items'" @click="setActiveTab('items')" tab-name="Items" />
   </nav>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import SidebarNavTab from './SidebarNavTab'
+import SidebarNavTab from './SidebarNavTab.vue'
 
 export default {
   name: 'SidebarNav',
