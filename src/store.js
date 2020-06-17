@@ -1,10 +1,5 @@
-"use strict"
-
-import Vue from 'vue'
 import Vuex from 'vuex'
-import uuid from 'uuid/v4'
-
-Vue.use(Vuex)
+import { v4 as uuid } from 'uuid'
 
 const flexProperties = {
   flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
@@ -67,6 +62,15 @@ export const mutations = {
       state.selectedItem = state.flexItems.find(it => it.id === item)
     }
   },
+  UPDATE_SELECTED_ITEM(state, val) {
+    state.flexItems = state.flexItems.map(it => {
+      if (it.id === val.id) {
+        return val
+      }
+      return it
+    })
+    state.selectedItem = val
+  },
   SET_ACTIVE_TAB(state, val) {
     state.activeTab = val
   },
@@ -95,20 +99,20 @@ export const mutations = {
 }
 
 export const actions = {
-  setFlexDirection({ commit }, val) {
-    commit('SET_FLEX_DIRECTION', val)
+  setFlexDirection({ commit }, e) {
+    commit('SET_FLEX_DIRECTION', e.target.value)
   },
-  setFlexWrap({ commit }, val) {
-    commit('SET_FLEX_WRAP', val)
+  setFlexWrap({ commit }, e) {
+    commit('SET_FLEX_WRAP', e.target.value)
   },
-  setJustifyContent({ commit }, val) {
-    commit('SET_JUSTIFY_CONTENT', val)
+  setJustifyContent({ commit }, e) {
+    commit('SET_JUSTIFY_CONTENT', e.target.value)
   },
-  setAlignItems({ commit }, val) {
-    commit('SET_ALIGN_ITEMS', val)
+  setAlignItems({ commit }, e) {
+    commit('SET_ALIGN_ITEMS', e.target.value)
   },
-  setAlignContent({ commit }, val) {
-    commit('SET_ALIGN_CONTENT', val)
+  setAlignContent({ commit }, e) {
+    commit('SET_ALIGN_CONTENT', e.target.value)
   },
   addFlexItem({ commit }) {
     commit('ADD_FLEX_ITEM')
@@ -124,6 +128,9 @@ export const actions = {
       commit('SET_ACTIVE_TAB', 'items')
     }
   },
+  updateSelectedItem({ commit }, val) {
+    commit('UPDATE_SELECTED_ITEM', val)
+  },
   setActiveTab({ commit }, val) {
     commit('SET_ACTIVE_TAB', val)
   },
@@ -135,7 +142,7 @@ export const actions = {
   }
 }
 
-export default new Vuex.Store({
+export default Vuex.createStore({
   state,
   mutations,
   actions

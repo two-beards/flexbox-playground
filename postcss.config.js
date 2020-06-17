@@ -1,12 +1,10 @@
 module.exports = {
   plugins: [
     require('tailwindcss')('./tailwind.config.js'),
-    require('autoprefixer'),
     ...(process.env.NODE_ENV === 'production'
       ? [
           require('@fullhuman/postcss-purgecss')({
             content: ['./src/**/*.vue', './public/**/*.html'],
-            whitelistPatternsChildren: [/multiselect/],
             extractors: [
               {
                 extractor: class {
