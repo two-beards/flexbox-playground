@@ -7,7 +7,6 @@
           class="bg-white"
           v-for="(option, index) in options"
           :key="index"
-          :selected="value === option"
           :value="option">{{ option }}
         </option>
     </select>
