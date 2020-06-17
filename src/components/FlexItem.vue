@@ -2,12 +2,12 @@
   <div
     :style="flexItemStyles"
     class="p-1 rounded">
-    <div
-      class="cursor-pointer bg-indigo-500 text-white rounded p-8 w-full h-full flex flex-col justify-around"
-      :class="{ 'shadow-outline': isActiveItem }"
+    <button
+      class="cursor-pointer text-white rounded p-8 w-full h-full flex flex-col justify-around focus:outline-none focus:shadow-outline"
+      :class="[activeClasses]"
       @click="edit">
       <span class="block text-center text-sm">Index: {{ itemIndex }}</span>
-    </div>
+    </button>
   </div>
 </template>
 
@@ -35,6 +35,12 @@ export default {
   computed: {
     flexItemStyles: function () {
       return `order: ${this.itemStyles.order}; flex-grow: ${this.itemStyles.flexGrow}; flex-shrink: ${this.itemStyles.flexShrink}; flex-basis: ${this.itemStyles.flexBasis}; align-self: ${this.itemStyles.alignSelf}`
+    },
+    activeClasses() {
+      if (this.isActiveItem) {
+        return 'bg-teal-600'
+      }
+      return 'bg-indigo-500'
     }
   },
   methods: {

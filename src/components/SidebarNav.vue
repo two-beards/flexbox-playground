@@ -1,6 +1,7 @@
 <template>
-  <nav class="flex m-4">
+  <nav class="flex m-4 bg-gray-200 rounded p-1">
     <SidebarNavTab :is-active="activeTab === 'container'" @click="setActiveTab('container')" tab-name="Container" />
+    <Spacer size="1" />
     <SidebarNavTab :is-active="activeTab === 'items'" @click="setActiveTab('items')" tab-name="Items" />
   </nav>
 </template>
@@ -8,11 +9,13 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import SidebarNavTab from './SidebarNavTab.vue'
+import Spacer from './Spacer.vue'
 
 export default {
   name: 'SidebarNav',
   components: {
     SidebarNavTab,
+    Spacer
   },
   computed: {
     ...mapState(['activeTab'])

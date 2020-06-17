@@ -1,9 +1,9 @@
 <template>
   <button
-    class="focus:outline-none focus:shadow-outline focus:border-indigo-700 flex w-1/2 uppercase text-sm font-bold border border-gray-500 first:rounded-l last:rounded-r items-center justify-center cursor-pointer py-2 -mr-px"
+    class="focus:outline-none focus:shadow-outline flex w-1/2 uppercase text-sm font-bold rounded items-center justify-center cursor-pointer p-2"
     :class="{
-      'border-indigo-600 bg-indigo-100 text-indigo-600 z-10': isActive === true,
-      'text-gray-600 hover:bg-gray-200': isActive === false
+      'bg-white text-indigo-600 shadow': isActive === true,
+      'text-gray-600 hover:text-indigo-600': isActive === false
     }"
     @click="$emit('click')">
     {{ tabName }}
