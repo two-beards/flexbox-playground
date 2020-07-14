@@ -13,7 +13,6 @@
     "vuex": "^4.0.0-alpha.1"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^1.2.0",
     "@vue/compiler-sfc": "^3.0.0-beta.14",
     "vite": "^0.20.0"
   }
