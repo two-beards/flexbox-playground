@@ -11,7 +11,9 @@ module.exports = async (req, res) => {
   }
   const payload = {
     userAgent: req.headers['user-agent'],
-    host: req.headers.host
+    host: req.headers.host,
+    timeZone: req.body.timeZone,
+    locale: req.body.locale
   }
 
   try {

@@ -28,9 +28,10 @@ export default {
     ...mapState(['showFlexMarkup'])
   },
   mounted() {
+    const { timeZone, locale } = Intl.DateTimeFormat().resolvedOptions()
     fetch('/api/pageview', {
       method: 'POST',
-      body: {}
+      body: { timeZone, locale }
     })
   },
 }
