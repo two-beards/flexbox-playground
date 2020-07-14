@@ -1,0 +1,9 @@
+{
+  "name": "flexbox-playground-api",
+  "version": "1.0.0",
+  "author": "mikemcbride",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "12.x"
+  }
+}
