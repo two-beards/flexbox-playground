@@ -1,4 +1,9 @@
 module.exports = {
+  purge: [
+    './src/**/*.html',
+    './src/**/*.vue',
+    './index.html'
+  ],
   theme: {
     extend: {
       spacing: {
