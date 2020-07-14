@@ -31,7 +31,8 @@ export default {
     const { timeZone, locale } = Intl.DateTimeFormat().resolvedOptions()
     fetch('/api/pageview', {
       method: 'POST',
-      body: { timeZone, locale }
+      body: JSON.stringify({ timeZone, locale }),
+      headers: { 'Content-Type': 'application/json' }
     })
   },
 }
