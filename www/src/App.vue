@@ -26,6 +26,12 @@ export default {
   },
   computed: {
     ...mapState(['showFlexMarkup'])
-  }
+  },
+  mounted() {
+    fetch('/api/pageview', {
+      method: 'POST',
+      body: {}
+    })
+  },
 }
 </script>
