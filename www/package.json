@@ -7,6 +7,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "httpie": "^1.1.2",
     "tailwindcss": "^1.1.2",
     "uuid": "^8.1.0",
     "vue": "^3.0.0-beta.14",

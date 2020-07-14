@@ -11,6 +11,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import http from 'httpie'
 import AppHeader from './components/AppHeader.vue'
 import Sidebar from './components/Sidebar.vue'
 import FlexContainer from './components/FlexContainer.vue'
@@ -26,6 +27,9 @@ export default {
   },
   computed: {
     ...mapState(['showFlexMarkup'])
-  }
+  },
+  mounted() {
+    http.post('/api/pageview', {})
+  },
 }
 </script>
