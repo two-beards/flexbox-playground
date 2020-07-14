@@ -5,5 +5,9 @@
   "license": "UNLICENSED",
   "engines": {
     "node": "12.x"
+  },
+  "dependencies": {
+    "httpie": "^1.1.2",
+    "jsonwebtoken": "^8.5.1"
   }
 }
