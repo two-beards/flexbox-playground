@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const response = await fetch('https://analytics.mcbrid.es/api/pageview', {
+    const response = await fetch('https://analytics.mcbride.tech/api/pageview', {
       method: 'POST',
       body: JSON.stringify(payload),
       headers: headers
