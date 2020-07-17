@@ -38,7 +38,7 @@ export default {
 }
 
 .carbon-text {
-  @apply text-sm p-2 leading-normal text-left;
+  @apply text-xs p-2 leading-normal text-left;
 }
 
 .carbon-poweredby {
