@@ -1,7 +1,7 @@
 <template>
   <section
     :style="flexStyles"
-    class="h-full flex flex-grow bg-gray-200 p-4 overflow-x-auto">
+    class="h-full flex flex-grow bg-gray-100 p-4 overflow-x-auto">
     <FlexItem
       v-for="(item, index) in flexItems"
       :key="item.id"

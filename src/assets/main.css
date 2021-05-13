@@ -1,18 +1,19 @@
-<template>
-  <div class="mt-auto p-2">
-    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEBDT277&placement=flexboxtech" id="_carbonads_js"></script>
-  </div>
-</template>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-<script>
-export default {
-  name: 'CarbonAds'
+@variants focus {
+  .shadow-outline {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+  }
+
+  .red-shadow-outline {
+    box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.5);
+  }
 }
-</script>
 
-<style>
 #carbonads {
-  @apply font-sans flex max-w-xs;
+  @apply font-sans flex max-w-xs bg-white fixed bottom-0 left-0 px-4 pt-4 border-t border-gray-300 -ml-px;
 }
 
 #carbonads a {
@@ -24,7 +25,7 @@ export default {
 }
 
 #carbonads .carbon-wrap {
-  @apply flex rounded shadow-md bg-gray-200 text-gray-900;
+  @apply flex rounded shadow-md bg-gray-100 text-gray-900;
 }
 
 .carbon-img {
@@ -44,4 +45,3 @@ export default {
 .carbon-poweredby {
   @apply block p-2 text-center leading-none font-semibold text-xs text-gray-600 bg-transparent;
 }
-</style>

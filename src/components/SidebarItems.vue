@@ -3,7 +3,7 @@
     <div v-if="selectedItem === null" class="pt-4 px-4 text-center text-gray-800">
       Click a flex item in the container on the right to edit its styles.
     </div>
-    
+
     <div v-if="selectedItem !== null" class="px-4 pb-4">
       <p class="leading-normal text-left text-gray-800 mb-4">Edit properties of the flex items here. The selected item will have a yellow border.</p>
       <button
@@ -17,7 +17,7 @@
         @click="removeSelectedItem">
         Remove Item
       </button>
-      
+
       <form>
         <div class="mb-4">
           <label class="mb-2 lowercase text-base font-semibold block">Order</label>
@@ -27,7 +27,7 @@
             name="order"
             type="number" />
         </div>
-        
+
         <div class="mb-4">
           <label class="mb-2 lowercase text-base font-semibold block">Flex-grow</label>
           <BaseInput
@@ -37,7 +37,7 @@
             type="number"
             min="0" />
         </div>
-        
+
         <div class="mb-4">
           <label class="mb-2 lowercase text-base font-semibold block">Flex-shrink</label>
           <BaseInput
@@ -47,7 +47,7 @@
             type="number"
             min="0" />
         </div>
-        
+
         <div class="mb-4">
           <label class="mb-2 lowercase text-base font-semibold block">Flex-basis</label>
           <BaseInput
@@ -56,7 +56,7 @@
             name="flexBasis"
             type="text" />
         </div>
-        
+
         <div class="mb-4">
           <label class="mb-2 lowercase text-base font-semibold block">Align-self</label>
           <BaseSelect
@@ -66,6 +66,7 @@
             :options="flexProperties.alignSelf" />
         </div>
       </form>
+      <CarbonAds />
     </div>
   </section>
 </template>
@@ -74,12 +75,14 @@
 import { mapState, mapActions } from 'vuex'
 import BaseSelect from './BaseSelect.vue'
 import BaseInput from './BaseInput.vue'
+import CarbonAds from './CarbonAds.vue'
 
 export default {
   name: 'SidebarItems',
   components: {
     BaseSelect,
-    BaseInput
+    BaseInput,
+    CarbonAds,
   },
   computed: mapState([
     'flexProperties',

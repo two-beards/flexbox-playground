@@ -6,19 +6,19 @@
     </span>
     <span class="items-center flex">
       <a
-        href="https://github.com/mikemcbride/flexbox-playground/"
+        href="https://github.com/two-beards/flexbox-playground/"
         target="_blank"
         rel="noreferrer noopener"
         title="View on GitHub"
-        class="no-underline text-gray-600 hover:text-gray-900 inline-block mr-4 w-6 h-6 focus:outline-none focus:shadow-outline">
+        class="no-underline text-gray-500 hover:text-gray-900 inline-block mr-4 w-6 h-6 focus:outline-none focus:shadow-outline">
         <GitHubIcon />
       </a>
       <button
-        class="text-sm cursor-pointer rounded px-4 py-2 border-none mr-2 inline-block text-indigo-600 bg-gray-200 hover:bg-gray-300 font-semibold focus:outline-none focus:shadow-outline"
+        class="text-sm cursor-pointer rounded px-4 py-2 border-none mr-2 inline-block text-indigo-600 bg-gray-100 hover:bg-gray-200 font-semibold focus:outline-none focus:shadow-outline"
         @click="resetDefaults">
         Reset to Defaults
       </button>
-      
+
       <button
         class="text-sm cursor-pointer rounded px-4 py-2 border-none inline-block text-white bg-indigo-500 hover:bg-indigo-600 font-semibold focus:outline-none focus:shadow-outline"
         @click="toggleMarkup">

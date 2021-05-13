@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex m-4 bg-gray-200 rounded p-1">
+  <nav class="flex m-4 bg-gray-100 rounded p-1">
     <SidebarNavTab :is-active="activeTab === 'container'" @click="setActiveTab('container')" tab-name="Container" />
     <Spacer size="6" />
     <SidebarNavTab :is-active="activeTab === 'items'" @click="setActiveTab('items')" tab-name="Items" />

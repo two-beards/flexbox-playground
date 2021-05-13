@@ -14,7 +14,7 @@
           @input="setFlexDirection"
           :options="flexProperties.flexDirection" />
       </div>
-      
+
       <div class="mb-4">
         <label class="mb-2 lowercase text-base font-semibold block">Flex-wrap</label>
         <BaseSelect
@@ -22,7 +22,7 @@
           @input="setFlexWrap"
           :options="flexProperties.flexWrap" />
       </div>
-      
+
       <div class="mb-4">
         <label class="mb-2 lowercase text-base font-semibold block">Justify-content</label>
         <BaseSelect
@@ -30,7 +30,7 @@
           @input="setJustifyContent"
           :options="flexProperties.justifyContent" />
       </div>
-      
+
       <div class="mb-4">
         <label class="mb-2 lowercase text-base font-semibold block">Align-items</label>
         <BaseSelect
@@ -38,7 +38,7 @@
           @input="setAlignItems"
           :options="flexProperties.alignItems" />
       </div>
-      
+
       <div class="mb-4">
         <label class="mb-2 lowercase text-base font-semibold block">Align-content</label>
         <BaseSelect
@@ -46,18 +46,21 @@
           @input="setAlignContent"
           :options="flexProperties.alignContent" />
       </div>
+      <CarbonAds />
     </form>
   </section>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import CarbonAds from './CarbonAds.vue'
 import BaseSelect from './BaseSelect.vue'
 
 export default {
   name: 'SidebarContainer',
   components: {
-    BaseSelect
+    BaseSelect,
+    CarbonAds
   },
   computed: mapState([
     'flexProperties',

@@ -38,7 +38,7 @@ export default {
     },
     activeClasses() {
       if (this.isActiveItem) {
-        return 'bg-teal-600'
+        return 'bg-green-600'
       }
       return 'bg-indigo-500'
     }
