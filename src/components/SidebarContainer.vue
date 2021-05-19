@@ -2,7 +2,7 @@
   <section class="px-4 pb-4">
     <p class="leading-normal mb-2">Edit properties of the flex container here.</p>
     <button
-      class="rounded mb-6 p-2 font-semibold bg-indigo-500 hover:bg-indigo-600 text-white cursor-pointer w-full text-center focus:outline-none focus:shadow-outline"
+      class="rounded mb-6 p-2 font-semibold bg-blue-600 hover:bg-blue-600 text-white cursor-pointer w-full text-center focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-600 focus:ring-opacity-40"
       @click="addFlexItem">
       Add Flex Item
     </button>

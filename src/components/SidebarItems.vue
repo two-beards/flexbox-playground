@@ -7,13 +7,13 @@
     <div v-if="selectedItem !== null" class="px-4 pb-4">
       <p class="leading-normal text-left text-gray-800 mb-4">Edit properties of the flex items here. The selected item will have a yellow border.</p>
       <button
-        class="rounded mb-4 p-2 font-semibold bg-indigo-500 hover:bg-indigo-600 text-white cursor-pointer w-full text-center focus:outline-none focus:shadow-outline"
+        class="rounded mb-4 p-2 font-semibold bg-blue-600 hover:bg-blue-600 text-white cursor-pointer w-full text-center focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-offset-2 focus:ring-opacity-30"
         @click="setSelectedItem(null)">
         Stop Editing Item
       </button>
 
       <button
-        class="rounded mb-8 p-2 font-semibold bg-red-500 hover:bg-red-600 text-white cursor-pointer w-full text-center focus:outline-none focus:red-shadow-outline"
+        class="rounded mb-8 p-2 font-semibold bg-red-500 hover:bg-red-600 text-white cursor-pointer w-full text-center focus:outline-none focus:ring-4 focus:ring-red-600 focus:ring-offset-2 focus:ring-opacity-30"
         @click="removeSelectedItem">
         Remove Item
       </button>

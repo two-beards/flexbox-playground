@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@variants focus {
-  .shadow-outline {
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
-  }
-
-  .red-shadow-outline {
-    box-shadow: 0 0 0 3px rgba(245, 101, 101, 0.5);
-  }
-}
-
 #carbonads {
   @apply font-sans flex max-w-xs bg-white fixed bottom-0 left-0 px-4 pt-4 border-t border-gray-300 -ml-px;
 }

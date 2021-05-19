@@ -10,32 +10,35 @@
         target="_blank"
         rel="noreferrer noopener"
         title="View on GitHub"
-        class="no-underline text-gray-500 hover:text-gray-900 inline-block mr-4 w-6 h-6 focus:outline-none focus:shadow-outline">
+        class="no-underline rounded text-gray-500 hover:text-gray-900 inline-block mr-4 w-6 h-6 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-600 focus:ring-opacity-40">
         <GitHubIcon />
       </a>
       <button
-        class="text-sm cursor-pointer rounded px-4 py-2 border-none mr-2 inline-block text-indigo-600 bg-gray-100 hover:bg-gray-200 font-semibold focus:outline-none focus:shadow-outline"
+        class="text-sm cursor-pointer rounded px-4 py-2 border-none mr-2 inline-block text-blue-600 bg-gray-100 hover:bg-gray-200 font-semibold focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-600 focus:ring-opacity-40"
         @click="resetDefaults">
         Reset to Defaults
       </button>
 
       <button
-        class="text-sm cursor-pointer rounded px-4 py-2 border-none inline-block text-white bg-indigo-500 hover:bg-indigo-600 font-semibold focus:outline-none focus:shadow-outline"
+        class="text-sm cursor-pointer rounded px-4 py-2 border-none inline-block text-white bg-blue-600 hover:bg-blue-600 font-semibold focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-600 focus:ring-opacity-40"
         @click="toggleMarkup">
-        Toggle Markup
+        {{ showFlexMarkup ? 'View Flex Items' : 'View Markup'}}
       </button>
     </span>
   </header>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import GitHubIcon from './GitHubIcon.vue'
 
 export default {
   name: 'AppHeader',
   components: {
     GitHubIcon,
+  },
+  computed: {
+      ...mapState(['showFlexMarkup'])
   },
   methods: {
     ...mapActions(['toggleMarkup', 'resetDefaults'])

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-xs h-32">
+  <div class="w-full max-w-xs h-32 flex-shrink-0">
   </div>
 </template>
 

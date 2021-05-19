@@ -1,8 +1,10 @@
 <template>
-  <aside class="flex flex-col bg-white border-r border-gray-300 h-full overflow-y-auto w-80 flex-shrink-0">
+  <aside class="sidebar flex flex-col bg-white border-r border-gray-300 h-full overflow-y-auto flex-shrink-0">
     <SidebarNav />
-    <SidebarContainer v-if="activeTab === 'container'" />
-    <SidebarItems v-if="activeTab === 'items'" />
+    <div class="flex-1">
+        <SidebarContainer v-if="activeTab === 'container'" />
+        <SidebarItems v-if="activeTab === 'items'" />
+    </div>
     <CarbonAds />
   </aside>
 </template>

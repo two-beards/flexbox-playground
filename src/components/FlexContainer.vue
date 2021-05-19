@@ -1,7 +1,7 @@
 <template>
   <section
     :style="flexStyles"
-    class="h-full flex flex-grow bg-gray-100 p-4 overflow-x-auto">
+    class="h-full flex flex-grow bg-gray-100 p-4 gap-4 overflow-x-auto">
     <FlexItem
       v-for="(item, index) in flexItems"
       :key="item.id"
@@ -9,7 +9,8 @@
       :item-styles="item.styles"
       :item-index="index"
       :is-active-item="selectedItem !== null && selectedItem.id === item.id"
-      @set="setSelectedItem" />
+      @set="setSelectedItem"
+      @remove="removeFlexItem" />
   </section>
 </template>
 

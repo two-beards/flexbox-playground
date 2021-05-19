@@ -1,11 +1,19 @@
 <template>
-  <div class="font-sans text-gray-900 min-h-screen flex flex-col max-w-screen-lg lg:max-w-full">
+  <div class="grid layout h-screen font-sans text-gray-900 max-w-screen-lg lg:max-w-full">
     <AppHeader />
-    <main class="flex-auto overflow-hidden absolute inset-0 pt-16 flex">
-      <Sidebar />
-      <FlexContainer v-if="showFlexMarkup === false" />
-      <FlexMarkup v-else />
-    </main>
+    <Sidebar />
+    <FlexContainer v-if="showFlexMarkup === false" />
+    <FlexMarkup v-else />
+    <footer class="footer bg-white flex items-center justify-center border-t border-gray-200">
+        <a
+          href="https://twobeards.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="A project by Two Beards"
+          class="inline-block cursor-pointer opacity-75 hover:opacity-100">
+          <TwoBeardsLogo :size="24" />
+        </a>
+    </footer>
   </div>
 </template>
 
@@ -15,6 +23,7 @@ import AppHeader from './components/AppHeader.vue'
 import Sidebar from './components/Sidebar.vue'
 import FlexContainer from './components/FlexContainer.vue'
 import FlexMarkup from './components/FlexMarkup.vue'
+import TwoBeardsLogo from './components/TwoBeards.vue'
 
 export default {
   name: 'FlexboxPlayground',
@@ -22,7 +31,8 @@ export default {
     AppHeader,
     Sidebar,
     FlexContainer,
-    FlexMarkup
+    FlexMarkup,
+    TwoBeardsLogo,
   },
   computed: {
     ...mapState(['showFlexMarkup'])
@@ -37,3 +47,25 @@ export default {
   },
 }
 </script>
+
+<style>
+.layout {
+  grid-template-columns: 20rem 1fr;
+  grid-template-rows: 4rem 1fr 3rem;
+}
+
+header {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.sidebar {
+  grid-column-end: span 1;
+  grid-row: 2 / 4;
+}
+
+.footer {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+}
+</style>

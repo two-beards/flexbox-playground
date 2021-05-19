@@ -1,7 +1,7 @@
 <template>
   <div class="select relative inline-block text-gray-700 w-full">
     <select
-      class="inline-block text-base w-full m-0 py-2 pl-4 pr-8 leading-normal text-gray-700 bg-white border border-gray-500 rounded cursor-pointer focus:outline-none focus:border-transparent focus:shadow-outline"
+      class="inline-block text-base w-full m-0 py-2 pl-4 pr-8 leading-normal text-gray-700 bg-white border border-gray-500 rounded cursor-pointer focus:outline-none focus:border-transparent focus:ring-4 focus:ring-offset-2 focus:border-blue-600 focus:ring-blue-600 focus:ring-opacity-40"
       v-bind="$attrs">
         <option
           class="bg-white text-gray-700"
