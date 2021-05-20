@@ -2,33 +2,38 @@
   <div
     :style="flexItemStyles"
     class="rounded"
-    :class="{ 'ring-4 ring-blue-600': isActiveItem === true }"
   >
-    <div class="h-full w-full bg-white shadow flex flex-col rounded p-2">
-      <div class="text-sm font-medium text-gray-700 px-2"
-        >Index: {{ itemIndex }}</div
+    <div class="h-full w-full bg-white shadow flex rounded items-center">
+        <div class="flex-1 relative h-full flex items-center">
+            <div class="text-sm font-medium text-gray-700 pl-4 pr-8 py-6 relative">
+                Index: {{ itemIndex }}
+            </div>
+            <span class="absolute bg-green-500 left-0 h-full rounded-l w-1" v-if="isActiveItem"></span>
+            <button
+              class="absolute inset-0 w-full rounded-l z-10 opacity-0 hover:opacity-100 transition-opacity ease-in-out duration-200 cursor-pointer focus:outline-none bg-blue-100 bg-opacity-90 text-blue-700 font-medium"
+              @click="edit"
+            >
+              {{ isActiveItem ? 'Done' : 'Edit' }}
+            </button>
+        </div>
+      <button
+        class="flex-shrink-0 flex-grow-0 rounded-r cursor-pointer focus:outline-none bg-white text-gray-500 hover:bg-red-100 hover:text-red-600 focus:ring-2 focus:ring-offset-2 focus:ring-red-600 px-2 border-l border-gray-100 flex items-center justify-center self-stretch"
+        @click="remove"
       >
-      <div class="flex items-center mt-4">
-        <button
-          class="w-20 cursor-pointer focus:outline-none bg-red-100 text-red-700 font-medium text-xs hover:bg-red-600 hover:text-white focus:ring-2 focus:ring-offset-2 focus:ring-red-600 px-2 py-1 rounded mx-1"
-          @click="remove"
-        >
-          Remove
-        </button>
-        <button
-          class="w-16 cursor-pointer focus:outline-none bg-blue-100 text-blue-700 font-medium text-xs hover:bg-blue-600 hover:text-white focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 px-2 py-1 rounded mx-1"
-          @click="edit"
-        >
-          {{ isActiveItem ? "Done" : "Edit" }}
-        </button>
-      </div>
+        <TrashCanIcon class="w-4 h-4" />
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+import TrashCanIcon from './TrashCan.vue'
+
 export default {
   name: "FlexItem",
+  components: {
+      TrashCanIcon,
+  },
   props: {
     itemId: {
       type: String,

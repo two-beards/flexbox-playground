@@ -1,6 +1,6 @@
 <template>
   <section class="px-4 pb-4">
-    <p class="leading-normal mb-2">Edit properties of the flex container here.</p>
+    <p class="leading-normal mb-4 p-4 text-sm text-blue-900 bg-blue-50 rounded">Edit properties of the flex container here. Click an item to the right to edit its properties.</p>
     <button
       class="rounded mb-6 p-2 font-semibold bg-blue-600 hover:bg-blue-600 text-white cursor-pointer w-full text-center focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-600 focus:ring-opacity-40"
       @click="addFlexItem">
@@ -46,21 +46,18 @@
           @input="setAlignContent"
           :options="flexProperties.alignContent" />
       </div>
-      <CarbonAds />
     </form>
   </section>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import CarbonAds from './CarbonAds.vue'
 import BaseSelect from './BaseSelect.vue'
 
 export default {
   name: 'SidebarContainer',
   components: {
     BaseSelect,
-    CarbonAds
   },
   computed: mapState([
     'flexProperties',

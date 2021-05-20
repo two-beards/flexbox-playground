@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 #carbonads {
-  @apply font-sans flex max-w-xs bg-white fixed bottom-0 left-0 px-4 pt-4 border-t border-gray-300 -ml-px;
+  @apply font-sans flex max-w-xs bg-white fixed h-40 bottom-0 left-0 px-4 pt-4 border-t border-gray-300 -ml-px;
 }
 
 #carbonads a {

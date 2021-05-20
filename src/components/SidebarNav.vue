@@ -1,7 +1,7 @@
 <template>
-  <nav class="flex m-4 bg-gray-100 rounded p-1">
+  <nav class="group flex m-4 bg-gray-100 rounded p-1 hover:bg-gray-200 hover:bg-opacity-75">
     <SidebarNavTab :is-active="activeTab === 'container'" @click="setActiveTab('container')" tab-name="Container" />
-    <Spacer size="6" />
+    <Spacer size="4" />
     <SidebarNavTab :is-active="activeTab === 'items'" @click="setActiveTab('items')" tab-name="Items" />
   </nav>
 </template>

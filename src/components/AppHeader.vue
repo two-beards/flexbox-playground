@@ -1,6 +1,6 @@
 <template>
   <header class="border-b border-gray-300 p-4 h-16 bg-white font-semibold flex items-center justify-between z-10">
-    <span>
+    <span class="text-xl">
       Flexbox Playground
       <span class="ml-2 py-1 pl-2 border-l border-gray-400 font-normal text-sm text-gray-700">&nbsp;A web app for exploring Flexbox</span>
     </span>
@@ -14,7 +14,7 @@
         <GitHubIcon />
       </a>
       <button
-        class="text-sm cursor-pointer rounded px-4 py-2 border-none mr-2 inline-block text-blue-600 bg-gray-100 hover:bg-gray-200 font-semibold focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-600 focus:ring-opacity-40"
+        class="text-sm cursor-pointer rounded px-4 py-2 border-none mr-2 inline-block text-blue-600 bg-gray-100 hover:bg-blue-50 focus:bg-blue-50 font-semibold focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-blue-600 focus:ring-opacity-40"
         @click="resetDefaults">
         Reset to Defaults
       </button>

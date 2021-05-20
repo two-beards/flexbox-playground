@@ -1,7 +1,7 @@
 <template>
-  <aside class="sidebar flex flex-col bg-white border-r border-gray-300 h-full overflow-y-auto flex-shrink-0">
+  <aside class="sidebar flex flex-col bg-white border-r border-gray-300 h-full flex-shrink-0 overflow-y-hidden">
     <SidebarNav />
-    <div class="flex-1">
+    <div class="flex-1 overflow-y-auto">
         <SidebarContainer v-if="activeTab === 'container'" />
         <SidebarItems v-if="activeTab === 'items'" />
     </div>
