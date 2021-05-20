@@ -10,14 +10,14 @@
             </div>
             <span class="absolute bg-green-500 left-0 h-full rounded-l w-1" v-if="isActiveItem"></span>
             <button
-              class="absolute inset-0 w-full rounded-l z-10 opacity-0 hover:opacity-100 transition-opacity ease-in-out duration-200 cursor-pointer focus:outline-none bg-blue-100 bg-opacity-90 text-blue-700 font-medium"
+              class="absolute inset-0 w-full rounded-l z-10 opacity-0 hover:opacity-100 focus:opacity-100 focus:ring-2 focus:ring-blue-600 transition-opacity ease-in-out duration-200 cursor-pointer focus:outline-none bg-blue-100 bg-opacity-90 text-blue-700 font-medium"
               @click="edit"
             >
               {{ isActiveItem ? 'Done' : 'Edit' }}
             </button>
         </div>
       <button
-        class="flex-shrink-0 flex-grow-0 rounded-r cursor-pointer focus:outline-none bg-white text-gray-500 hover:bg-red-100 hover:text-red-600 focus:ring-2 focus:ring-offset-2 focus:ring-red-600 px-2 border-l border-gray-100 flex items-center justify-center self-stretch"
+        class="flex-shrink-0 flex-grow-0 rounded-r cursor-pointer focus:outline-none bg-white text-gray-500 hover:bg-red-100 hover:text-red-600 focus:ring-2 focus:ring-red-600 px-2 border-l border-gray-100 flex items-center justify-center self-stretch"
         @click="remove"
       >
         <TrashCanIcon class="w-4 h-4" />
