@@ -1,15 +1,15 @@
 <template>
-    <CodeContainer lang="css" :content="content" />
+  <CodeContainer lang="css" :content="content" />
 </template>
 
 <script>
 import { mapState } from "vuex";
-import CodeContainer from './CodeContainer.vue'
+import CodeContainer from "./CodeContainer.vue";
 
 export default {
   name: "CssMarkup",
   components: {
-      CodeContainer,
+    CodeContainer,
   },
   computed: {
     ...mapState([
@@ -46,7 +46,7 @@ export default {
       }
       const containerCss = `.container {\n\tdisplay: flex;${fd}${fw}${jc}${ai}${ac}\n}`;
 
-      const itemsCss = this.flexItems
+      let itemsCss = this.flexItems
         .map((it, index) => {
           let nonDefaultCount = 0;
           let o = "";
@@ -81,13 +81,20 @@ export default {
           }
 
           if (nonDefaultCount > 0) {
-            return `.item-${index} {${o}${fg}${fs}${fb}${as}
-}`;
+            return `.item-${index} {${o}${fg}${fs}${fb}${as}\n}`;
+          } else {
+            return null;
           }
         })
-        .join("\n");
+        .filter((it) => it !== null);
 
-      return `${containerCss}\n\n${itemsCss}`;
+      if (itemsCss.length > 0) {
+        itemsCss = `\n\n${itemsCss.join("\n\n")}`;
+      } else {
+        itemsCss = "";
+      }
+
+      return `${containerCss}${itemsCss}`;
     },
   },
 };
