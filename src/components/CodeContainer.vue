@@ -1,7 +1,7 @@
 <template>
     <div class="flex-grow">
         <h3 class="mb-3 font-bold text-xl">{{ lang.toUpperCase() }}</h3>
-        <pre class="p-4 mb-6 font-mono text-gray-800 bg-gray-50 border border-gray-200 rounded-md"><code :class="languageClass">{{ content }}</code></pre>
+        <pre class="p-4 mb-6 font-mono text-gray-800 bg-gray-50 border border-gray-200 rounded-md overflow-x-scroll"><code :class="languageClass">{{ content }}</code></pre>
     </div>
 </template>
 
