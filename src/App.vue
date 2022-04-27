@@ -36,15 +36,7 @@ export default {
   },
   computed: {
     ...mapState(['showFlexMarkup'])
-  },
-  mounted() {
-    const { timeZone, locale } = Intl.DateTimeFormat().resolvedOptions()
-    fetch('/api/pageview', {
-      method: 'POST',
-      body: JSON.stringify({ timeZone, locale }),
-      headers: { 'Content-Type': 'application/json' }
-    })
-  },
+  }
 }
 </script>
 
