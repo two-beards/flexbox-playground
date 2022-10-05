@@ -2,37 +2,37 @@
 @tailwind components;
 
 #carbonads {
-  @apply font-sans flex max-w-xs bg-white fixed h-40 bottom-0 left-0 px-4 pt-4 border-t border-gray-300 -ml-px;
+    @apply font-sans flex max-w-xs bg-white fixed h-40 bottom-0 left-0 px-4 pt-4 border-t border-gray-300 -ml-px;
 }
 
 #carbonads a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 #carbonads span {
-  @apply relative block overflow-hidden;
+    @apply relative block overflow-hidden;
 }
 
 #carbonads .carbon-wrap {
-  @apply flex rounded shadow-md bg-gray-100 text-gray-900;
+    @apply flex rounded shadow-md bg-gray-100 text-gray-900;
 }
 
 .carbon-img {
-  display: block;
-  margin: 0;
-  line-height: 1;
+    display: block;
+    margin: 0;
+    line-height: 1;
 }
 
 .carbon-img img {
-  display: block;
+    display: block;
 }
 
 .carbon-text {
-  @apply text-xs p-2 leading-normal text-left;
+    @apply text-xs p-2 leading-normal text-left;
 }
 
 .carbon-poweredby {
-  @apply block p-2 text-center leading-none font-semibold text-xs text-gray-600 bg-transparent;
+    @apply block p-2 text-center leading-none font-semibold text-xs text-gray-600 bg-transparent;
 }
 
 @tailwind utilities;

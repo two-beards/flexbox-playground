@@ -4,10 +4,30 @@ import { v4 as uuid } from 'uuid'
 const flexProperties = {
     flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
     flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
-    justifyContent: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around'],
+    justifyContent: [
+        'flex-start',
+        'flex-end',
+        'center',
+        'space-between',
+        'space-around',
+    ],
     alignItems: ['flex-start', 'flex-end', 'center', 'stretch', 'baseline'],
-    alignContent: ['flex-start', 'flex-end', 'center', 'stretch', 'space-between', 'space-around'],
-    alignSelf: ['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch']
+    alignContent: [
+        'flex-start',
+        'flex-end',
+        'center',
+        'stretch',
+        'space-between',
+        'space-around',
+    ],
+    alignSelf: [
+        'auto',
+        'flex-start',
+        'flex-end',
+        'center',
+        'baseline',
+        'stretch',
+    ],
 }
 
 const state = {
@@ -20,7 +40,7 @@ const state = {
     selectedItem: null,
     activeTab: 'container',
     showFlexMarkup: false,
-    flexProperties
+    flexProperties,
 }
 
 export const mutations = {
@@ -40,20 +60,25 @@ export const mutations = {
         state.alignContent = val
     },
     ADD_FLEX_ITEM(state) {
-        state.flexItems = [...state.flexItems, {
-            id: uuid(),
-            styles: {
-                order: 0,
-                flexGrow: 0,
-                flexShrink: 0,
-                flexBasis: 'auto',
-                alignSelf: 'auto'
-            }
-        }]
+        state.flexItems = [
+            ...state.flexItems,
+            {
+                id: uuid(),
+                styles: {
+                    order: 0,
+                    flexGrow: 0,
+                    flexShrink: 0,
+                    flexBasis: 'auto',
+                    alignSelf: 'auto',
+                },
+            },
+        ]
     },
     REMOVE_SELECTED_ITEM(state) {
         const currentItemId = state.selectedItem.id
-        state.flexItems = state.flexItems.filter(it => it.id !== currentItemId)
+        state.flexItems = state.flexItems.filter(
+            (it) => it.id !== currentItemId
+        )
     },
     REMOVE_FLEX_ITEM(state, itemId) {
         // if we're removing the currently selected item this way,
@@ -61,17 +86,17 @@ export const mutations = {
         if (itemId === state.selectedItem?.id) {
             state.selectedItem = null
         }
-        state.flexItems = state.flexItems.filter(it => it.id !== itemId)
+        state.flexItems = state.flexItems.filter((it) => it.id !== itemId)
     },
     SET_SELECTED_ITEM(state, item) {
         if (item === null) {
             state.selectedItem = item
         } else {
-            state.selectedItem = state.flexItems.find(it => it.id === item)
+            state.selectedItem = state.flexItems.find((it) => it.id === item)
         }
     },
     UPDATE_SELECTED_ITEM(state, val) {
-        state.flexItems = state.flexItems.map(it => {
+        state.flexItems = state.flexItems.map((it) => {
             if (it.id === val.id) {
                 return val
             }
@@ -94,16 +119,16 @@ export const mutations = {
         state.alignContent = flexProperties.alignContent[0]
 
         // reset each flex item
-        state.flexItems.forEach(it => {
+        state.flexItems.forEach((it) => {
             it.styles = {
                 order: 0,
                 flexGrow: 0,
                 flexShrink: 0,
                 flexBasis: 'auto',
-                alignSelf: 'auto'
+                alignSelf: 'auto',
             }
         })
-    }
+    },
 }
 
 export const actions = {
@@ -150,11 +175,11 @@ export const actions = {
     },
     resetDefaults({ commit }) {
         commit('RESET_DEFAULTS')
-    }
+    },
 }
 
 export default Vuex.createStore({
     state,
     mutations,
-    actions
+    actions,
 })
