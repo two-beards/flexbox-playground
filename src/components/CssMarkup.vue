@@ -65,7 +65,7 @@ export default {
             fg = `\n\tflex-grow: ${it.styles.flexGrow};`;
           }
 
-          if (it.styles.flexShrink !== 0) {
+          if (it.styles.flexShrink !== 1) {
             nonDefaultCount++;
             fs = `\n\tflex-shrink: ${it.styles.flexShrink};`;
           }
