@@ -67,7 +67,7 @@ export const mutations = {
                 styles: {
                     order: 0,
                     flexGrow: 0,
-                    flexShrink: 0,
+                    flexShrink: 1,
                     flexBasis: 'auto',
                     alignSelf: 'auto',
                 },
@@ -123,7 +123,7 @@ export const mutations = {
             it.styles = {
                 order: 0,
                 flexGrow: 0,
-                flexShrink: 0,
+                flexShrink: 1,
                 flexBasis: 'auto',
                 alignSelf: 'auto',
             }
