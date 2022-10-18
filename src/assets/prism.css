@@ -3,65 +3,65 @@
 */
 
 :root {
-  --inline-code-bg: #F5F3FF;
-  --inline-code-color: #6D28D9;
-  --code-border: #CBD5E1;
-  --code-fg: #6e7f91;
-  --code-comment: #a8b3bd;
-  --code-blue: #2563eb;
-  --code-cyan: #06B6D4;
-  --code-purple: #7C3AED;
-  --code-green: #10B981;
-  --code-red: #EF4444;
-  --code-yellow: #F59E0B;
-  --tab-size: 4;
+    --inline-code-bg: #f5f3ff;
+    --inline-code-color: #6d28d9;
+    --code-border: #cbd5e1;
+    --code-fg: #6e7f91;
+    --code-comment: #a8b3bd;
+    --code-blue: #2563eb;
+    --code-cyan: #06b6d4;
+    --code-purple: #7c3aed;
+    --code-green: #10b981;
+    --code-red: #ef4444;
+    --code-yellow: #f59e0b;
+    --tab-size: 4;
 }
 
 /* purgecss start ignore */
 
-code[class*="language-"],
+code[class*='language-'],
 pre.prismjs {
-  color: var(--code-fg);
-  background: none;
-  border-radius: 0;
-  padding: 0;
-  font-size: 1rem;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
+    color: var(--code-fg);
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    font-size: 1rem;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
 
-  -moz-tab-size: var(--tab-size);
-  -o-tab-size: var(--tab-size);
-  tab-size: var(--tab-size);
+    -moz-tab-size: var(--tab-size);
+    -o-tab-size: var(--tab-size);
+    tab-size: var(--tab-size);
 
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
 }
 
 /* Code blocks */
 pre.prismjs {
-  background: transparent;
-  border-top: 1px solid var(--code-border);
-  border-bottom: 1px solid var(--code-border);
-  margin: 1rem -1rem 2rem;
-  overflow: auto;
-  padding: 1rem;
-  width: 100vw;
+    background: transparent;
+    border-top: 1px solid var(--code-border);
+    border-bottom: 1px solid var(--code-border);
+    margin: 1rem -1rem 2rem;
+    overflow: auto;
+    padding: 1rem;
+    width: 100vw;
 }
 
 @media all and (min-width: 640px) {
-  pre.prismjs {
-    border-radius: .25rem;
-    border: 1px solid var(--code-border);
-    margin-left: 0;
-    margin-right: 0;
-    width: auto;
-  }
+    pre.prismjs {
+        border-radius: 0.25rem;
+        border: 1px solid var(--code-border);
+        margin-left: 0;
+        margin-right: 0;
+        width: auto;
+    }
 }
 
 .token.comment,
@@ -69,11 +69,11 @@ pre.prismjs {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: var(--code-comment);
+    color: var(--code-comment);
 }
 
 .token.punctuation {
-  color: var(--code-fg);
+    color: var(--code-fg);
 }
 
 .token.tag,
@@ -82,7 +82,7 @@ pre.prismjs {
 .token.deleted,
 .token.number,
 .token.interpolation-punctuation {
-  color: var(--code-red);
+    color: var(--code-red);
 }
 
 .token.function-name,
@@ -91,7 +91,7 @@ pre.prismjs {
 .token.property,
 .language-html .token.attr-value,
 .token.url {
-  color: var(--code-blue);
+    color: var(--code-blue);
 }
 
 .language-html .token.property,
@@ -101,7 +101,7 @@ pre.prismjs {
 .token.constant,
 .token.variable,
 .token.symbol {
-  color: var(--code-yellow);
+    color: var(--code-yellow);
 }
 
 .token.selector,
@@ -109,7 +109,7 @@ pre.prismjs {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: var(--code-purple);
+    color: var(--code-purple);
 }
 
 .token.operator,
@@ -122,20 +122,20 @@ pre.prismjs {
 .token.attr-value,
 .token.regex,
 .token.inserted {
-  color: var(--code-green);
+    color: var(--code-green);
 }
 
 .token.important,
 .token.bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .token.italic {
-  font-style: italic;
+    font-style: italic;
 }
 
 .token.entity {
-  cursor: help;
+    cursor: help;
 }
 
 /* purgecss end ignore */

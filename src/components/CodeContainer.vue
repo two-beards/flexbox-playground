@@ -1,47 +1,49 @@
 <template>
     <div class="flex-grow">
         <h3 class="mb-3 font-bold text-xl">{{ lang.toUpperCase() }}</h3>
-        <pre class="p-4 mb-6 font-mono text-gray-800 bg-gray-50 border border-gray-200 rounded-md overflow-x-scroll"><code :class="languageClass">{{ content }}</code></pre>
+        <pre
+            class="p-4 mb-6 font-mono text-gray-800 bg-gray-50 border border-gray-200 rounded-md overflow-x-scroll"
+        ><code :class="languageClass">{{ content }}</code></pre>
     </div>
 </template>
 
 <script>
-import Prism from "prismjs";
-import "prismjs/components/prism-css";
-import "prismjs/components/prism-markup";
+import Prism from 'prismjs'
+import 'prismjs/components/prism-css'
+import 'prismjs/components/prism-markup'
 
-import "../assets/prism.css";
+import '../assets/prism.css'
 
 export default {
-  name: "CodeContainer",
-  props: {
-    content: {
-      type: String,
-      required: true,
+    name: 'CodeContainer',
+    props: {
+        content: {
+            type: String,
+            required: true,
+        },
+        lang: {
+            type: String,
+            required: true,
+        },
     },
-    lang: {
-      type: String,
-      required: true,
+    computed: {
+        languageClass() {
+            return `language-${this.lang.toLowerCase()}`
+        },
     },
-  },
-  computed: {
-    languageClass() {
-      return `language-${this.lang.toLowerCase()}`;
+    mounted() {
+        Prism.highlightAll()
     },
-  },
-  mounted() {
-    Prism.highlightAll();
-  },
-  watch: {
-      content(newValue) {
-          // in case they change content while looking at the code container,
-          // we need to make sure we re-highlight. We have to wait for a re-render.
-          if (newValue) {
-              this.$nextTick(() => {
-                  Prism.highlightAll()
-              })
-          }
-      }
-  },
-};
+    watch: {
+        content(newValue) {
+            // in case they change content while looking at the code container,
+            // we need to make sure we re-highlight. We have to wait for a re-render.
+            if (newValue) {
+                this.$nextTick(() => {
+                    Prism.highlightAll()
+                })
+            }
+        },
+    },
+}
 </script>
